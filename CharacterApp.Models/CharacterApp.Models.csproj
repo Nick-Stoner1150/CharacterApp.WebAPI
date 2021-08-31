@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterModels\CharacterCreate.cs" />
+    <Compile Include="CharacterModels\CharacterListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TeamModel\TeamCreate.cs" />
     <Compile Include="TeamModel\EditTeamModel.cs" />

@@ -2,6 +2,7 @@
 using CharacterApp.Models.CharacterModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,25 @@ namespace CharacterApp.Services.CharacterServices
             {
                 ctx.Characters.Add(entity);
                 return await ctx.SaveChangesAsync() > 0;
+            }
+        }
+
+        public async Task<IEnumerable<CharacterListItem>> Get()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    await
+                    ctx
+                    .Characters
+                    .Select(c => new CharacterListItem
+                    {
+                        CharacterId = c.CharacterId,
+                        Name = c.Name,
+                        TeamName = c.Team.TeamName
+                    }).ToListAsync();
+
+                return query;
             }
         }
     }
