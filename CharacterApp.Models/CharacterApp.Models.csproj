@@ -85,6 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamModel\CreateTeamModel.cs" />
+    <Compile Include="TeamModel\EditTeamModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
