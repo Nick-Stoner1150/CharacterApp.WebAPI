@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterApp.Data
+namespace CharacterApp.Services.FeatureModel
 {
-    class Ability
+    class FeatureListDetail
     {
         public string SuperSpeed { get; set; }
         public string Phasing { get; set; }

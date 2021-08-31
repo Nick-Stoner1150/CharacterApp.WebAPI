@@ -84,7 +84,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ability.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="IdentityModels.cs" />
