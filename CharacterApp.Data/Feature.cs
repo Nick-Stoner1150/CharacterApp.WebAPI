@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CharacterApp.Data
 {
-    class Feature
+    public class Feature
     {
         [Key]
         public int Id { get; set; }
@@ -19,8 +19,5 @@ namespace CharacterApp.Data
         public string Telepathy { get; set; }
         public string Healing { get; set; }
         public string Invisibility { get; set; }
-
-        [ForeignKey(nameof(Characters))]
-        public Character Characters { get; set; }
     }
 }
