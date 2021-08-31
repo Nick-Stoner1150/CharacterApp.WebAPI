@@ -90,6 +90,10 @@
     <Compile Include="Migrations\202108282012594_add-migration init.Designer.cs">
       <DependentUpon>202108282012594_add-migration init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108312317343_secondadd.cs" />
+    <Compile Include="Migrations\202108312317343_secondadd.Designer.cs">
+      <DependentUpon>202108312317343_secondadd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Team.cs" />
@@ -101,6 +105,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202108282012594_add-migration init.resx">
       <DependentUpon>202108282012594_add-migration init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108312317343_secondadd.resx">
+      <DependentUpon>202108312317343_secondadd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
