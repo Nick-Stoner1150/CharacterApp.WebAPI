@@ -23,6 +23,8 @@ namespace CharacterApp.Data
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Feature> Features { get; set; }
+
         
         public DbSet<Team> Teams { get; set; }
 
