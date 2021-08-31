@@ -33,6 +33,8 @@ namespace CharacterApp.Data
             return new ApplicationDbContext();
         }
 
+        public DbSet<Character> Characters { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
