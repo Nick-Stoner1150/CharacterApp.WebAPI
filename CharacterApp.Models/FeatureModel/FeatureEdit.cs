@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterApp.Services.FeatureModel
 {
-    class FeatureListDetail
+    public class FeatureEdit
     {
         public string SuperSpeed { get; set; }
         public string Phasing { get; set; }
