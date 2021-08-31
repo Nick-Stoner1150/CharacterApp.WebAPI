@@ -23,6 +23,9 @@ namespace CharacterApp.Data
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        
+        public DbSet<Team> Teams { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -63,4 +66,6 @@ namespace CharacterApp.Data
             HasKey(iur => iur.UserId);
         }
     }
+
+    
 }
