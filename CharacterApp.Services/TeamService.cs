@@ -1,4 +1,5 @@
 ﻿using CharacterApp.Data;
+using CharacterApp.Models.TeamModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,21 +19,21 @@ namespace CharacterApp.Services
             _userId = userId;
         }
 
-        public bool CreateTeam(TeamCreate team)
+        public bool CreateTeam(TeamCreate model)
         {
             var entity =
                 new Team()
                 {
-                    TeamName = team.TeamName,
-                    TeamId = team.Id,
-
+                   TeamId = model.TeamId,
+                   TeamName = model.TeamName,
                 };
-
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Teams.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
+
+
         }
     }
 

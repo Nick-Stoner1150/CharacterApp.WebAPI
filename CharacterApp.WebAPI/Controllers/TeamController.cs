@@ -1,4 +1,5 @@
-﻿using CharacterApp.Services;
+﻿using CharacterApp.Models.TeamModel;
+using CharacterApp.Services;
 using CharacterApp.WebAPI.Models;
 using Microsoft.AspNet.Identity;
 using System;
@@ -13,12 +14,16 @@ namespace CharacterApp.WebAPI.Controllers
 {
     public class TeamController : ApiController
     {
-        private TeamService CreateNoteService()
+       
+
+            private TeamService CreateTeamService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var teamService = new TeamService(userId);
             return teamService;
         }
+
+        
 
         public IHttpActionResult Post(TeamCreate team)
         {
@@ -32,5 +37,12 @@ namespace CharacterApp.WebAPI.Controllers
 
             return Ok();
         }
+
+        
+
+
+
+
+
     }
 }

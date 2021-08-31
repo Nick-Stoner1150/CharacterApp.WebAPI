@@ -214,7 +214,6 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\TeamCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -312,6 +311,10 @@
     <ProjectReference Include="..\CharacterApp.Data\CharacterApp.Data.csproj">
       <Project>{2d38d9ef-65aa-469c-9b98-be312abbd46e}</Project>
       <Name>CharacterApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CharacterApp.Models\CharacterApp.Models.csproj">
+      <Project>{d9fe70cf-d7b9-4e28-926a-c69341b0d52f}</Project>
+      <Name>CharacterApp.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\CharacterApp.Services\CharacterApp.Services.csproj">
       <Project>{3d51c4a6-f3f6-4029-805d-e8ade153093e}</Project>
