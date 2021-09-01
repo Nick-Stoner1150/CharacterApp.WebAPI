@@ -3,7 +3,7 @@ namespace CharacterApp.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addedeFeature : DbMigration
+    public partial class addedFeature : DbMigration
     {
         public override void Up()
         {
@@ -19,13 +19,18 @@ namespace CharacterApp.Data.Migrations
                         Telepathy = c.String(),
                         Healing = c.String(),
                         Invisibility = c.String(),
+                        Character_CharacterId = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Character", t => t.Character_CharacterId)
+                .Index(t => t.Character_CharacterId);
             
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.Feature", "Character_CharacterId", "dbo.Character");
+            DropIndex("dbo.Feature", new[] { "Character_CharacterId" });
             DropTable("dbo.Feature");
         }
     }
