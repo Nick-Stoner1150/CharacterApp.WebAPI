@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="Feature.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202108282012594_add-migration init.cs" />
     <Compile Include="Migrations\202108282012594_add-migration init.Designer.cs">
@@ -93,6 +94,10 @@
     <Compile Include="Migrations\202108312317343_secondadd.cs" />
     <Compile Include="Migrations\202108312317343_secondadd.Designer.cs">
       <DependentUpon>202108312317343_secondadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108312339006_addedeFeature.cs" />
+    <Compile Include="Migrations\202108312339006_addedeFeature.Designer.cs">
+      <DependentUpon>202108312339006_addedeFeature.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +110,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202108282012594_add-migration init.resx">
       <DependentUpon>202108282012594_add-migration init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108312339006_addedeFeature.resx">
+      <DependentUpon>202108312339006_addedeFeature.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108312317343_secondadd.resx">
       <DependentUpon>202108312317343_secondadd.cs</DependentUpon>
