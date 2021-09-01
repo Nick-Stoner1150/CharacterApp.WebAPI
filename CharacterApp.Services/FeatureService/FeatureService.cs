@@ -1,16 +1,43 @@
 ﻿using CharacterApp.Data;
-using CharacterApp.Models.CharacterModels;
 using CharacterApp.Services.FeatureModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CharacterApp.Services.FeatureService
 {
     public class FeatureService
     {
+        private readonly Guid _featureId;
+        public FeatureService(Guid featureId)
+        {
+            _featureId = featureId;
+        }
+
+        public async Task<IEnumerable<FeatureListDetail>> Get()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    await
+                    ctx
+                    .Features
+                    .Select(f => new FeatureListDetail
+                    {
+                        SuperSpeed = f.SuperSpeed,
+                        Phasing = f.Phasing,
+                        Magic = f.Magic,
+                        Flight = f.Flight,
+                        Telepathy = f.Telepathy,
+                        Healing = f.Healing,
+                        Invisibility = f.Invisibility
+                    }).ToListAsync();
+
+                return query;
+            }
+        }
         public async Task<bool> Post(FeatureCreate feature)
         {
             var entity = new Feature

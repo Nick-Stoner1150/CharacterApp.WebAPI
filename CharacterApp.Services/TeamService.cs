@@ -1,12 +1,6 @@
 ﻿using CharacterApp.Data;
 using CharacterApp.Models.TeamModel;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.ModelBinding;
 
 namespace CharacterApp.Services
 {
@@ -24,8 +18,8 @@ namespace CharacterApp.Services
             var entity =
                 new Team()
                 {
-                   TeamId = model.TeamId,
-                   TeamName = model.TeamName,
+                    TeamId = model.TeamId,
+                    TeamName = model.TeamName,
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -37,6 +31,6 @@ namespace CharacterApp.Services
         }
     }
 
-        
-        
-    }
+
+
+}

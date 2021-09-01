@@ -2,10 +2,6 @@
 using CharacterApp.Services.CharacterServices;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -21,9 +17,9 @@ namespace CharacterApp.WebAPI.Controllers.Character_Controller
         }
 
         [HttpPost]
-        public async Task<IHttpActionResult> Post([FromBody]CharacterCreate character)
+        public async Task<IHttpActionResult> Post([FromBody] CharacterCreate character)
         {
-            if(character is null || !ModelState.IsValid)
+            if (character is null || !ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var svc = CreateCharacterService();

@@ -1,8 +1,8 @@
+using CharacterApp.WebAPI.Areas.HelpPage.ModelDescriptions;
+using CharacterApp.WebAPI.Areas.HelpPage.Models;
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using CharacterApp.WebAPI.Areas.HelpPage.ModelDescriptions;
-using CharacterApp.WebAPI.Areas.HelpPage.Models;
 
 namespace CharacterApp.WebAPI.Areas.HelpPage.Controllers
 {

@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CharacterApp.Data
 {
     public class Feature
     {
+        public Guid FeatureId { get; set; }
+
         [Key]
         public int Id { get; set; }
 
@@ -26,7 +23,5 @@ namespace CharacterApp.Data
         public string Healing { get; set; }
 
         public string Invisibility { get; set; }
-
-        public virtual List<Character> Characters { get; set; }
     }
 }
