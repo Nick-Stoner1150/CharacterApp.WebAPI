@@ -17,7 +17,7 @@ namespace CharacterApp.Data
         [Required]
         public string Name { get; set; }
         public Team Team { get; set; }
-        // public List<Feature> Features { get; set; } = new List<Feature>();
+        public List<Feature> Features { get; set; } = new List<Feature>();
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset? ModifiedDate { get; set; }
     }

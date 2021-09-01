@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http;
 
 namespace CharacterApp.Services.CharacterServices
 {
@@ -49,6 +50,31 @@ namespace CharacterApp.Services.CharacterServices
                     }).ToListAsync();
 
                 return query;
+            }
+        }
+
+        public async Task<CharacterDetail> Get(int id)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var character =
+                    await
+                    ctx
+                    .Characters
+                    .SingleOrDefaultAsync(c => c.CharacterId == id);
+
+                if (character is null)
+                    return null;
+
+                return new CharacterDetail
+                {
+                    CharacterId = character.CharacterId,
+                    Name = character.Name,
+                    TeamName = character.Team.TeamName,
+                    CreatedDate = character.CreatedDate,
+                    ModifiedDate = character.ModifiedDate,
+                    Features = character.Features
+                };
             }
         }
     }
