@@ -35,6 +35,21 @@ namespace CharacterApp.Services
 
 
         }
+
+        public bool UpdateTeam(TeamEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Teams
+                    .Single(e => e.TeamId == model.TeamId);
+
+                entity.TeamName = model.TeamName;
+                
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 
         

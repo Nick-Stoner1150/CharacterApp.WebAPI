@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CharacterApp.Models.TeamModel
 {
-    class EditTeamModel
+    public class TeamEdit
     {
+        public int TeamId { get; set; }
+
+        public string TeamName { get; set; }
     }
 }

@@ -38,7 +38,20 @@ namespace CharacterApp.WebAPI.Controllers
             return Ok();
         }
 
-        
+        public IHttpActionResult Put(TeamEdit team)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateTeamService();
+
+            if (!service.UpdateTeam(team))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+
 
 
 
