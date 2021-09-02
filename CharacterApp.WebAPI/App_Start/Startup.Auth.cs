@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using CharacterApp.Data;
+using CharacterApp.WebAPI.Providers;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using CharacterApp.WebAPI.Providers;
-using CharacterApp.WebAPI.Models;
-using CharacterApp.Data;
+using System;
 
 namespace CharacterApp.WebAPI
 {

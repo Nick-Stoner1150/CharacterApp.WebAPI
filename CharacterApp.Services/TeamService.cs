@@ -1,12 +1,7 @@
 ﻿using CharacterApp.Data;
 using CharacterApp.Models.TeamModel;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.ModelBinding;
 
 namespace CharacterApp.Services
 {
@@ -24,7 +19,8 @@ namespace CharacterApp.Services
             var entity =
                 new Team()
                 {
-                   TeamName = model.TeamName,
+                    TeamId = model.TeamId,
+                    TeamName = model.TeamName,
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -34,8 +30,23 @@ namespace CharacterApp.Services
 
 
         }
+
+        public bool UpdateTeam(TeamEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Teams
+                    .Single(e => e.TeamId == model.TeamId);
+
+                entity.TeamName = model.TeamName;
+                
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 
-        
-        
-    }
+
+
+}
