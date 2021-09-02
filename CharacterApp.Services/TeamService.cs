@@ -1,6 +1,7 @@
 ﻿using CharacterApp.Data;
 using CharacterApp.Models.TeamModel;
 using System;
+using System.Linq;
 
 namespace CharacterApp.Services
 {
