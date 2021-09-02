@@ -14,8 +14,8 @@ namespace CharacterApp.Data
 
         [Required]
         public string TeamName { get; set; }
-                
-        public virtual List<Character> Characters { get; set; }
+
+        public virtual List<Character> Characters { get; set; } = new List<Character>();
 
     }
 }

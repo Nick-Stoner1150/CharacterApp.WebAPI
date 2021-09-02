@@ -13,7 +13,7 @@ namespace CharacterApp.Models.CharacterModels
         public string Name { get; set; }
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset? ModifiedDate { get; set; }
-        public List<Feature> Features { get; set; }
+        // public List<Feature> Features { get; set; }
         public string TeamName { get; set; }
     }
 }

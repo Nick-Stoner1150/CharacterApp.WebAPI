@@ -8,9 +8,7 @@ using System.Threading.Tasks;
 namespace CharacterApp.Models.TeamModel
 {
     public class TeamCreate
-    {
-        [Required]
-        public int TeamId { get; set; }
+    { 
 
         [Required]
         public string TeamName { get; set; }

@@ -11,5 +11,6 @@ namespace CharacterApp.Models.CharacterModels
     {
         [Required]
         public string Name { get; set; }
+        public int TeamId { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,12 @@ namespace CharacterApp.Data
 
         [Required]
         public string Name { get; set; }
-        public Team Team { get; set; }
+
+        [ForeignKey(nameof(Team))]
+        public int TeamId { get; set; }
+        public virtual Team Team { get; set; }
+
+
         public List<Feature> Features { get; set; } = new List<Feature>();
         public DateTimeOffset CreatedDate { get; set; }
         public DateTimeOffset? ModifiedDate { get; set; }

@@ -24,7 +24,6 @@ namespace CharacterApp.Services
             var entity =
                 new Team()
                 {
-                   TeamId = model.TeamId,
                    TeamName = model.TeamName,
                 };
             using (var ctx = new ApplicationDbContext())

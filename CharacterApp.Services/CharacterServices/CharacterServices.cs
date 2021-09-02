@@ -24,11 +24,19 @@ namespace CharacterApp.Services.CharacterServices
             var entity = new Character
             {
                 Name = character.Name,
+                TeamId = character.TeamId,
                 CreatedDate = DateTime.Now
             };
 
             using (var ctx = new ApplicationDbContext())
             {
+                var team = await ctx.Teams.FindAsync(character.TeamId);
+                if (team is null)
+                    return false;
+
+                entity.Team = team;
+                entity.Team.Characters.Add(entity);
+
                 ctx.Characters.Add(entity);
                 return await ctx.SaveChangesAsync() > 0;
             }
@@ -70,10 +78,9 @@ namespace CharacterApp.Services.CharacterServices
                 {
                     CharacterId = character.CharacterId,
                     Name = character.Name,
-                    TeamName = character.Team.TeamName,
                     CreatedDate = character.CreatedDate,
                     ModifiedDate = character.ModifiedDate,
-                    Features = character.Features
+                    TeamName = character.Team.TeamName
                 };
             }
         }

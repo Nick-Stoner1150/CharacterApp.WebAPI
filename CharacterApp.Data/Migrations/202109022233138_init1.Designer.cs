@@ -7,13 +7,13 @@ namespace CharacterApp.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class secondadd : IMigrationMetadata
+    public sealed partial class init1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(secondadd));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108312317343_secondadd"; }
+            get { return "202109022233138_init1"; }
         }
         
         string IMigrationMetadata.Source
