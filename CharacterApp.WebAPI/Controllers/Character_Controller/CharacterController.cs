@@ -38,5 +38,13 @@ namespace CharacterApp.WebAPI.Controllers.Character_Controller
             var characters = await svc.Get();
             return Ok(characters);
         }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> Get([FromUri] int id)
+        {
+            var svc = CreateCharacterService();
+            var character = await svc.Get(id);
+            return Ok(character);
+        }
     }
 }
