@@ -315,11 +315,11 @@
       <Name>CharacterApp.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\CharacterApp.Models\CharacterApp.Models.csproj">
-      <Project>{d9fe70cf-d7b9-4e28-926a-c69341b0d52f}</Project>
+      <Project>{D9FE70CF-D7B9-4E28-926A-C69341B0D52F}</Project>
       <Name>CharacterApp.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\CharacterApp.Services\CharacterApp.Services.csproj">
-      <Project>{3d51c4a6-f3f6-4029-805d-e8ade153093e}</Project>
+      <Project>{3D51C4A6-F3F6-4029-805D-E8ADE153093E}</Project>
       <Name>CharacterApp.Services</Name>
     </ProjectReference>
   </ItemGroup>

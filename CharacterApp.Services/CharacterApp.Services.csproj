@@ -98,10 +98,6 @@
       <Project>{2d38d9ef-65aa-469c-9b98-be312abbd46e}</Project>
       <Name>CharacterApp.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CharacterApp.Models\CharacterApp.Models.csproj">
-      <Project>{d9fe70cf-d7b9-4e28-926a-c69341b0d52f}</Project>
-      <Name>CharacterApp.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CharacterApp.Data\CharacterApp.Data.csproj">
