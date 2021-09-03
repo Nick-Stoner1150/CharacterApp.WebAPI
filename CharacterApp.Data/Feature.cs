@@ -15,7 +15,7 @@ namespace CharacterApp.Data
         public string SuperPowerName { get; set; }
 
         [ForeignKey(nameof(Characters))]
-        public int CharacterID { get; set; }
+        public int CharacterId { get; set; }
 
         public Character Characters { get; set; }
 
