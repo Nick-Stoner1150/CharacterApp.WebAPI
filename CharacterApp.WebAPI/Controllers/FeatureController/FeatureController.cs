@@ -40,7 +40,7 @@ namespace CharacterApp.WebAPI.Controllers
         [HttpPut]
         public async Task<IHttpActionResult> Put(FeatureEdit feature, int id)
         {
-            if (feature is null)
+            if (id<1 || id!=feature.Id || feature is null)
             {
                 return BadRequest();
             }
