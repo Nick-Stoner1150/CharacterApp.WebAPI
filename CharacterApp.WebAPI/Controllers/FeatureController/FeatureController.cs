@@ -33,7 +33,7 @@ namespace CharacterApp.WebAPI.Controllers
             var success = await svc.Post(feature);
             if (success)
             {
-                return Ok();
+                return Ok("Superpower Created and added.");
             }
             return InternalServerError();
         }
