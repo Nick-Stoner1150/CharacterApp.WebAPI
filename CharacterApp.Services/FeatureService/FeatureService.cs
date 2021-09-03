@@ -49,8 +49,8 @@ namespace CharacterApp.Services.FeatureService
                     return false;
                 }
 
-                entity.Characters = character;
-                entity.Characters.Features.Add(entity);
+                entity.Character = character;
+                entity.Character.Features.Add(entity);
 
                 ctx.Features.Add(entity);
                 return await ctx.SaveChangesAsync() > 0;

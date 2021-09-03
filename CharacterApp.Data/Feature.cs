@@ -14,11 +14,10 @@ namespace CharacterApp.Data
 
         public string SuperPowerName { get; set; }
 
-        [ForeignKey(nameof(Characters))]
+        [ForeignKey(nameof(Character))]
         public int CharacterId { get; set; }
+        public virtual Character Character { get; set; }
 
-        public Character Characters { get; set; }
-
-        public virtual List<Character> Person { get; set; }
+        // public virtual List<Character> Person { get; set; }
     }
 }
