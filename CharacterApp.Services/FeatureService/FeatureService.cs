@@ -26,13 +26,7 @@ namespace CharacterApp.Services.FeatureService
                     .Features
                     .Select(f => new FeatureListDetail
                     {
-                        SuperSpeed = f.SuperSpeed,
-                        Phasing = f.Phasing,
-                        Magic = f.Magic,
-                        Flight = f.Flight,
-                        Telepathy = f.Telepathy,
-                        Healing = f.Healing,
-                        Invisibility = f.Invisibility
+                       SuperPowerName = f.SuperPowerName
                     }).ToListAsync();
 
                 return query;
@@ -42,13 +36,7 @@ namespace CharacterApp.Services.FeatureService
         {
             var entity = new Feature
             {
-                SuperSpeed = feature.SuperSpeed,
-                Phasing = feature.Phasing,
-                Magic = feature.Magic,
-                Flight = feature.Flight,
-                Telepathy = feature.Telepathy,
-                Healing = feature.Healing,
-                Invisibility = feature.Invisibility
+                SuperPowerName = feature.SuperPowerName
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -67,14 +55,7 @@ namespace CharacterApp.Services.FeatureService
                 {
                     return false;
                 }
-                oldData.SuperSpeed = featureEdit.SuperSpeed;
-                oldData.Phasing = featureEdit.Phasing;
-                oldData.Magic = featureEdit.Magic;
-                oldData.Flight = featureEdit.Flight;
-                oldData.Telepathy = featureEdit.Telepathy;
-                oldData.Healing = featureEdit.Healing;
-                oldData.Invisibility = featureEdit.Invisibility;
-
+                oldData.SuperPowerName = featureEdit.SuperPowerName;
                 return await ctx.SaveChangesAsync() > 0;
             }
         }

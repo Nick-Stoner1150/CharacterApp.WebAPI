@@ -1,13 +1,10 @@
-﻿namespace CharacterApp.Services.FeatureModel
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CharacterApp.Services.FeatureModel
 {
     public class FeatureCreate
     {
-        public string SuperSpeed { get; set; }
-        public string Phasing { get; set; }
-        public string Magic { get; set; }
-        public string Flight { get; set; }
-        public string Telepathy { get; set; }
-        public string Healing { get; set; }
-        public string Invisibility { get; set; }
+        [Required]
+        public string SuperPowerName { get; set; }
     }
 }
