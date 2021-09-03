@@ -26,6 +26,7 @@ namespace CharacterApp.Services.FeatureService
                     .Features
                     .Select(f => new FeatureListDetail
                     {
+                       CharacterId = f.CharacterId,
                        SuperPowerName = f.SuperPowerName
                     }).ToListAsync();
 
@@ -36,11 +37,21 @@ namespace CharacterApp.Services.FeatureService
         {
             var entity = new Feature
             {
+                CharacterId = feature.CharacterId,
                 SuperPowerName = feature.SuperPowerName
             };
 
             using (var ctx = new ApplicationDbContext())
             {
+                var character = await ctx.Characters.FindAsync(feature.CharacterId);
+                if (character is null)
+                {
+                    return false;
+                }
+
+                entity.Characters = character;
+                entity.Characters.Features.Add(entity);
+
                 ctx.Features.Add(entity);
                 return await ctx.SaveChangesAsync() > 0;
             }
